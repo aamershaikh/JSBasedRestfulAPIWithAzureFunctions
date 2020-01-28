@@ -3,10 +3,14 @@
   "functionTimeout": "00:10:00",
   "extensions": {
     "http": {
-      "routePrefix": "api/retaildataplatform/getfarmerdetails",
+      "routePrefix": "api/retaildataplatform",
       "maxOutstandingRequests": 20,
       "maxConcurrentRequests": 10,
       "dynamicThrottlesEnabled": false
     }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[1.*, 2.0.0)"
   }
 }

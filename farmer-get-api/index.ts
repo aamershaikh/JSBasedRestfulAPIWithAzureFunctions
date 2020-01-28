@@ -1,11 +1,11 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 
-const httpTrigger: AzureFunction = async function (context: any, req: any): Promise<void> {
+const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     context.log('HTTP trigger for farmer GET Request');
-    const farmerId: number = req.params.id;
-    if (farmerId ! == 0) {
+    const farmerId = req.params.id;
+    if (farmerId!== null) {
         context.res = {
-            body: "Hello " + (farmerId)
+            body: "Welcome " + (req.params.id)
         };
     }
     else {
